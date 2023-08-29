@@ -1,0 +1,7 @@
+https://color.adobe.com/pt/create/color-wheel#
+
+backgroundColor: '#390366'
+ButtonsColor: '#29027D'
+
+containerAcess: '#F6F3E8'
+tapbar: '#11101C' / '#15141D'
