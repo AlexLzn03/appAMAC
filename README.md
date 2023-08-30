@@ -2,7 +2,7 @@
 
 # Sobre o projeto
 
-O AMAC é um projeto Full-Stack móvel utilizando o React Native. O aplicativo está em desenvolvimento, sendo construído para a validação do meu Trabalho de Graduação.
+O AMAC é um projeto para dispositivos móveis utilizando o React Native. O aplicativo está em desenvolvimento, sendo construído para a validação do meu Trabalho de Graduação.
 
 A ideia da aplicação consiste em uma ferramenta para dar assistência a donos de carros a fazer a devida manutenção em seu automóvel.
 
@@ -15,9 +15,25 @@ A ideia da aplicação consiste em uma ferramenta para dar assistência a donos 
 - Expo
 - JavaScript
 - React Navigation
+- Firebase Authentication
+---
+# O que foi instalado até agora
+### Versão do Node.js/ npm/ React Native instalada
+- 18.6.0
+- 8.12.1
+- 0.72.4
+---
+### React Navigation 
+- npx expo install @react-navigation/native
+- npx expo install react-native-screens react-native-safe-area-context
+- npx expo install @react-navigation/native-stack
+- npm install @react-navigation/bottom-tabs
 
-# Como executar o projeto
+#### React Native Animatable
+- npx expo install react-native-animatable
 
+### Firebase
+- npm install firebase
 
 # Autor
 

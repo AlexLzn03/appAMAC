@@ -1,15 +1,37 @@
 //Tela de Login e acesso ao cadastre-se
-import React from 'react';
+import React, {useState} from 'react';
 import { Text, StyleSheet, View, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Feather} from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
+
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from "../config/firebase"
 
 import * as Animatable from 'react-native-animatable'
 //Animação para o React https://reactnative.dev/docs/animated 
 //As animações https://github.com/oblador/react-native-animatable
 
+//botão SignUp com problema
+//botão de Acessar do Login com problema
+
 export default function Screens() {
     const navigation = useNavigation();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+
+    function signIn() {
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+    }
+        
 
     return (
         <View style={styles.container}>
@@ -19,21 +41,29 @@ export default function Screens() {
 
             <Animatable.View animation="slideInRight" style={styles.containerAcess}>
                 <Text style={styles.title}>Email</Text>
-                <TextInput placeholder="Digite seu e-mail" style={styles.input}
+                <TextInput 
+                placeholder="Digite seu e-mail" 
+                value={email} 
+                onChangeText={setEmail} 
+                style={styles.input}
                 />
 
                 <Text style={styles.title}>Senha</Text>
-                <TextInput placeholder="Digite sua senha" style={styles.input}
+                <TextInput 
+                placeholder="Digite sua senha" 
+                value={password} 
+                onChangeText={setPassword}
+                style={styles.input}
                 />
 
-                <TouchableOpacity style={styles.button} onPress={ () => navigation.navigate('Home')}>
+                <TouchableOpacity style={styles.button} onPress={signIn}>
                     <Text style={styles.buttonText}>Acessar</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttonSignUp} onPress={ () => navigation.navigate('SignUp')}>
+                <TouchableOpacity style={styles.buttonSignUp} onPress={() => navigation.navigate('SignUp')}>
                     <Text style={styles.signUpText}>Não possui uma conta? Cadastre-se</Text>
                 </TouchableOpacity>
-
+                
             </Animatable.View>
 
         </View>
@@ -50,7 +80,7 @@ const styles = StyleSheet.create({
         marginBottom: '8%',
         paddingStart: '5%',
     },
-    headerText:{
+    headerText: {
         fontSize: 28,
         fontWeight: 'bold',
         color: '#F6F3E8'
