@@ -7,7 +7,7 @@ O AMAC é um projeto para dispositivos móveis utilizando o React Native. O apli
 A ideia da aplicação consiste em uma ferramenta para dar assistência a donos de carros a fazer a devida manutenção em seu automóvel.
 
 ## Layout do aplicativo
-![Tela de Inicio](https://github.com/AlexLzn03/appAMAC/blob/main/src/assets/TelaInicio.png)
+![Tela de Inicio](https://github.com/AlexLzn03/appAMAC/blob/main/src/assets/TelaDeInicio.PNG)
 ![Tela de Login](https://github.com/AlexLzn03/appAMAC/blob/main/src/assets/TelaDeLogin.PNG)
 ![Tela de Cadastro](https://github.com/AlexLzn03/appAMAC/blob/main/src/assets/TelaDeCadastro.png)
 
