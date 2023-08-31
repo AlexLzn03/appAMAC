@@ -18,6 +18,7 @@ export default function Navigation() {
                 name="Start"
                 component={Start}
                 options={{ headerShown: false }} //Retira o nome da tela do cabeçalho
+                
             />
 
             <Stack.Screen

@@ -1,11 +1,12 @@
 /* - yarn add @react-native-firebase/app
 - yarn add @react-native-firebase/auth */
 // Import the functions you need from the SDKs you need
+
 import { initializeApp } from "firebase/app";
-import { initializeAuth } from "firebase/auth";
+import { initializeAuth } from "firebase/auth"; 
 //import { getAnalytics } from "firebase/analytics";
 
-import { getAuth, getReactNativePersistence } from "firebase/auth";
+import { getAuth, getReactNativePersistence, onAuthStateChanged } from "firebase/auth";
 import { ReactNativeAsyncStorage } from "@react-native-async-storage/async-storage";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -13,6 +14,7 @@ import { ReactNativeAsyncStorage } from "@react-native-async-storage/async-stora
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 const firebaseConfig = {
   apiKey: "AIzaSyAbD1j1C6ydS5cOl1fmQ-Pwdaq5b-YaGEw",
   authDomain: "appamac-c5d21.firebaseapp.com",
@@ -26,7 +28,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 //const analytics = getAnalytics(app);
+//const uth era pra ser auth, porem daria conflito com o export, const pedido pelo proprio firebase
 const uth = initializeAuth(app, {
   persistence: getReactNativePersistence(ReactNativeAsyncStorage)
 });
+
 export const auth = getAuth(app);

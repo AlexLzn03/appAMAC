@@ -5,24 +5,47 @@ import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, setPersistence, browserLocalPersistence } from "firebase/auth";
 import { auth } from "../config/firebase"
 
 import * as Animatable from 'react-native-animatable'
+import { firebase } from '@react-native-firebase/auth';
 //Animação para o React https://reactnative.dev/docs/animated 
 //As animações https://github.com/oblador/react-native-animatable
 
-//botão SignUp com problema
-//botão de Acessar do Login com problema
+//Usuario não fica logado
 
 export default function Screens() {
     const navigation = useNavigation();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
+    /*firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        navigation.navigate('Home')
+    }
+    })*/
+
+    /*const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/auth.user
+        navigation.navigate('Home')
+        const uid = user.uid;
+        // ...
+      } else {
+        // User is signed out
+        // ...
+      }
+    });*/
+
     function signIn() {
         signInWithEmailAndPassword(auth, email, password)
             .then(() => {
-               console.log('usuário logado!')
+                console.log('usuário logado!')
+                navigation.navigate('Home')
+                //quando o usuario é valido redireciona para a tela Home
             })
             .catch((error) => {
                 const errorCode = error.code;

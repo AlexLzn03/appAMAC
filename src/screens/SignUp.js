@@ -1,6 +1,6 @@
 //Tela de cadastramento de um novo usuário
 import React, {useState} from 'react';
-import { Text, StyleSheet, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
@@ -21,12 +21,15 @@ export default function Screens() {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        
+        Alert.alert('Aviso',
+        'Usuário criado com sucesso! Efetue o login')
+        navigation.navigate('Login')
+        //assim que é feito o cadastro redireciona para a tela de Login
       })
       .catch((error) => {
         /*const errorCode = error.code;
         const errorMessage = error.message;*/
-        console.log(errorMessage);
+        console.log(error);
       });
     }
 

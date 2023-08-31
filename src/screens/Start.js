@@ -1,14 +1,32 @@
 //Tela de início antes do Login ou Cadastro
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
 import * as Animatable from 'react-native-animatable'
+import { useSafeAreaFrame } from 'react-native-safe-area-context';
 //Animação para o React Native https://reactnative.dev/docs/animated
+
+import { getAuth, onAuthStateChanged} from "firebase/auth";
+import { auth } from '../config/firebase';
 
 export default function Screens() {
   const navigation = useNavigation();
+
+  /*const auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/auth.user
+      navigation.navigate('Home')
+      const uid = user.uid;
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+  }); */
 
   return (
     <View style={styles.container}>
@@ -28,8 +46,7 @@ export default function Screens() {
         <Text style={styles.text}>Monitore seu carro na palma da sua mão!</Text>
 
         <TouchableOpacity style={styles.button}
-        onPress={ () => navigation.navigate('Login')}
-        >
+        onPress={() => navigation.navigate('Login')}>
           <Text style={styles.buttonText}>Acessar</Text>
         </TouchableOpacity>
 
@@ -38,6 +55,19 @@ export default function Screens() {
     </View>
   );
 }
+/*
+import React, {useEffect, useState} from "react";
+import { getAuth } from "firebase/auth";
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    getAuth().onAuthStateChanged((_user) => {
+      setUser(_user);
+    })
+  }, []);
+{user ? () => navigation.navigate('Home') : () => navigation.navigate('Start')} </Routes>
+*/
 
 const styles = StyleSheet.create({
   container: {
