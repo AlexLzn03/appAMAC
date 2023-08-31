@@ -4,7 +4,6 @@ import { Text, StyleSheet, View, TextInput, TouchableOpacity } from 'react-nativ
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
-//import auth from '@react-native-firebase/auth'
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from "../config/firebase"
 
@@ -18,19 +17,6 @@ export default function Screens() {
   const [password, setPassword] = useState();
 
   function signUp(){
-      /*auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(userCredential => {
-        console.log('user: ', userCredential);
-      })
-      .catch(error => {
-        if (error.code === 'auth/email-already-in-use'){
-          console.log('email já existe');
-        }
-        if (error.code === 'auth/invalid-email') {
-          console.log('email inválido');
-        }
-      });*/
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -38,8 +24,8 @@ export default function Screens() {
         
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        /*const errorCode = error.code;
+        const errorMessage = error.message;*/
         console.log(errorMessage);
       });
     }
@@ -69,7 +55,6 @@ export default function Screens() {
 
         <TouchableOpacity style={styles.button} onPress={signUp}>
           <Text style={styles.buttonText}>Cadastre-se</Text>
-          return
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.buttonSignUp} onPress={() => navigation.navigate('Login')}>

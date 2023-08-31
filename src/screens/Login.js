@@ -21,17 +21,15 @@ export default function Screens() {
 
     function signIn() {
         signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in 
-                const user = userCredential.user;
-                // ...
+            .then(() => {
+               console.log('usuário logado!')
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                console.log(error)
             });
     }
-        
 
     return (
         <View style={styles.container}>
