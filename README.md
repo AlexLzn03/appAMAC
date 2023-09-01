@@ -8,9 +8,9 @@ A ideia da aplicação consiste em uma ferramenta para dar assistência a donos 
 
 ## Layout do aplicativo
 <div>
-  <img src="https://github.com/AlexLzn03/appAMAC/blob/main/src/assets/TelaDeInicio.PNG" width="300px" />
-  <img src="https://github.com/AlexLzn03/appAMAC/blob/main/src/assets/TelaDeLogin.PNG" width="300px" />
-  <img src="https://github.com/AlexLzn03/appAMAC/blob/main/src/assets/TelaDeCadastro.png" width="300px" />
+  <img src="https://github.com/AlexLzn03/appAMAC/blob/main/src/assets/TelaDeInicio.PNG" width="200px" />
+  <img src="https://github.com/AlexLzn03/appAMAC/blob/main/src/assets/TelaDeLogin.PNG" width="200px" />
+  <img src="https://github.com/AlexLzn03/appAMAC/blob/main/src/assets/TelaDeCadastro.png" width="200px" />
 </div>
 
 ## Tecnologias utilizadas
