@@ -46,7 +46,8 @@ export default function Screens() {
         <Text style={styles.text}>Monitore seu carro na palma da sua mão!</Text>
 
         <TouchableOpacity style={styles.button}
-        onPress={() => navigation.navigate('Login')}>
+        //TROCAR HOME POR LOGIN
+        onPress={() => navigation.navigate('Home')}> 
           <Text style={styles.buttonText}>Acessar</Text>
         </TouchableOpacity>
 

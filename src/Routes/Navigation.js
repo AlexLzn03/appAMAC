@@ -7,6 +7,7 @@ import TabRoutes from "./tab.Navigation";
 import Start from '../screens/Start';
 import Login from '../screens/Login';
 import SignUp from '../screens/SignUp';
+import AddCar from '../screens/AddCar';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,6 +38,12 @@ export default function Navigation() {
                 name="Home"
                 component={TabRoutes} //screen home está sendo puxado de tab.Navigation
                 options={{ headerShown: false}} 
+            />
+
+            <Stack.Screen
+                name="AddCar"
+                component={AddCar}
+                options={{ headerShown: false}}
             />
             
         </Stack.Navigator>
